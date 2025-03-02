@@ -20,11 +20,14 @@
     </style>
 </head>
 <body>
-    <h3>Please Don't Copy me!</h3>
+    <h3>Please Don't Copy this text!</h3>
 
     <div class="gif">
         <img src="pls.gif" height="150px" alt="">
     </div>
+<p style="text-align: center;">
+    <textarea id="txt" style="resize: none; font-size: large; display: none;" rows="3" cols="50"></textarea>
+</p>
 
     
 </body>
@@ -32,8 +35,9 @@
         document.addEventListener("copy", (e) => {
             const selectedData = window.getSelection().toString();
             if(selectedData){
-                document.querySelector("h3").innerText = "You copied?\n Now Don't paste me anywhere! 😾";
+                document.querySelector("h3").innerText = "You copied?\n Now Don't paste it anywhere! 😾";
                 document.querySelector(".gif img").src='angry.gif';
+                document.querySelector("#txt").style.display = "inline";
                 // document.querySelector("h3").style.fontSize = "15px";
             }
             e.clipboardData.setData(
